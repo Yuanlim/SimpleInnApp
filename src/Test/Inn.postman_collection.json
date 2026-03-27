@@ -1,0 +1,794 @@
+{
+  "info": {
+    "_postman_id": "d4e26c19-1916-431b-a41c-241bd5629735",
+    "name": "Inn",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "21639661"
+  },
+  "item": [
+    {
+      "name": "Room Test",
+      "item": [
+        {
+          "name": "http://localhost:5423/api/rooms (Valid)",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// Test add\r\n{    \r\n    \"Name\": \"202\",\r\n    \"Type\": \"Suite\",\r\n    \"IsAvailable\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/rooms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "rooms"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5423/api/rooms (Enum Error)",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// Test enum\r\n{    \r\n    \"Name\": \"A122\",\r\n    \"Type\": \"What?\",\r\n    \"IsAvailable\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/rooms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "rooms"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5423/api/rooms (Unique Error)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// After valid add check room name unqieness constraints\r\n{    \r\n    \"Name\": \"A122\",\r\n    \"Type\": \"Double\",\r\n    \"IsAvailable\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/rooms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "rooms"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5423/api/rooms (Null Error)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// After valid add check room name unqieness constraints\r\n{    \r\n    \"Name\": \"\",\r\n    \"Type\": \"Double\",\r\n    \"IsAvailable\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/rooms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "rooms"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5423/api/rooms (Valid)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// Change name\r\n{   \r\n    \"Id\": 10,\r\n    \"Name\": \"113\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/rooms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "rooms"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "http://localhost:5423/api/rooms",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "// Change Type\r\n{   \r\n    \"Id\": 10,\r\n    \"Type\": \"Suite\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5423/api/rooms",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5423",
+                  "path": [
+                    "api",
+                    "rooms"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": ""
+            },
+            {
+              "name": "http://localhost:5423/api/rooms",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "// Change name\r\n{   \r\n    \"Id\": 10,\r\n    \"IsAvailable\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5423/api/rooms",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5423",
+                  "path": [
+                    "api",
+                    "rooms"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "http://localhost:5423/api/rooms (Error)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// Nothing provided\r\n{   \r\n    \"Id\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/rooms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "rooms"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "http://localhost:5423/api/rooms (Name Null Error)",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "// Nothing provided\r\n{   \r\n    \"Id\": 10,\r\n    \"Name\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5423/api/rooms",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5423",
+                  "path": [
+                    "api",
+                    "rooms"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "http://localhost:5423/api/rooms (Valid)",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/rooms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "rooms"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5423/api/rooms/available (Valid)",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/rooms/available",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "rooms",
+                "available"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Booking Test",
+      "item": [
+        {
+          "name": "http://localhost:5423/api/bookings (Date Error)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// Post one ancient bookings\r\n{\r\n    \"guestName\": \"John Doe\",\r\n    \"roomId\": 1,\r\n    \"checkInDate\": \"2025-05-01\",\r\n    \"checkOutDate\": \"2025-05-03\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/bookings",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "bookings"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "http://localhost:5423/api/bookings (Date Error)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "// Post one check out date is before check in date\r\n{\r\n    \"guestName\": \"John Doe\",\r\n    \"roomId\": 1,\r\n    \"checkInDate\": \"2026-05-01\",\r\n    \"checkOutDate\": \"2026-02-03\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5423/api/bookings",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5423",
+                  "path": [
+                    "api",
+                    "bookings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": ""
+            },
+            {
+              "name": "http://localhost:5423/api/bookings (Date Error)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "// Post one bookings date that cant be parse to DateTime\r\n{\r\n    \"guestName\": \"John Doe\",\r\n    \"roomId\": 1,\r\n    \"checkInDate\": \"2025-05\",\r\n    \"checkOutDate\": \"2025-05-03\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5423/api/bookings",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5423",
+                  "path": [
+                    "api",
+                    "bookings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "http://localhost:5423/api/bookings (Name Error)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// Post one ancient bookings\r\n{\r\n    \"guestName\": \"\",\r\n    \"roomId\": 1,\r\n    \"checkInDate\": \"2025-05-01\",\r\n    \"checkOutDate\": \"2025-05-03\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/bookings",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "bookings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5423/api/bookings (Field Missing Error)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// Post one ancient bookings\r\n{\r\n    \"guestName\": \"\",\r\n    \"roomId\": 1,\r\n    \"checkOutDate\": \"2025-05-03\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/bookings",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "bookings"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "http://localhost:5423/api/bookings (Field Missing Error)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "// Post one ancient bookings\r\n{\r\n    \"guestName\": \"\",\r\n    \"checkOutDate\": \"2025-05-03\",\r\n    \"checkInDate\": \"2025-05-03\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5423/api/bookings",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5423",
+                  "path": [
+                    "api",
+                    "bookings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": ""
+            },
+            {
+              "name": "http://localhost:5423/api/bookings (Field Missing Error)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "// Post one ancient bookings\r\n{\r\n    \"roomId\": 1,\r\n    \"checkInDate\": \"2025-05-03\",\r\n    \"checkOutDate\": \"2025-05-03\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5423/api/bookings",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5423",
+                  "path": [
+                    "api",
+                    "bookings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": ""
+            },
+            {
+              "name": "http://localhost:5423/api/bookings (Field Missing Error)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "// Post one ancient bookings\r\n{\r\n    \"guestName\": \"\",\r\n    \"roomId\": 1,\r\n    \"checkInDate\": \"2025-05-03\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5423/api/bookings",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5423",
+                  "path": [
+                    "api",
+                    "bookings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "http://localhost:5423/api/bookings (Valid)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// Post one valid bookings\r\n{\r\n    \"guestName\": \"John Doe\",\r\n    \"roomId\": 1,\r\n    \"checkInDate\": \"2026-05-01\",\r\n    \"checkOutDate\": \"2026-06-02\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/bookings",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "bookings"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "http://localhost:5423/api/bookings (Valid)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "// Post one booking\r\n{\r\n    \"guestName\": \"Jason\",\r\n    \"roomId\": 4,\r\n    \"checkInDate\": \"2026-05-01\",\r\n    \"checkOutDate\": \"2026-06-02\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5423/api/bookings",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5423",
+                  "path": [
+                    "api",
+                    "bookings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "http://localhost:5423/api/bookings (Booked Error)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// Post one booked room\r\n{\r\n    \"guestName\": \"Ludwig\",\r\n    \"roomId\": 1,\r\n    \"checkInDate\": \"2026-05-01\",\r\n    \"checkOutDate\": \"2026-06-02\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5423/api/bookings",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5423",
+              "path": [
+                "api",
+                "bookings"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "http://localhost:5423/api/bookings (Booked Error)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "// Post one booked room\r\n{\r\n    \"guestName\": \"Michael\",\r\n    \"roomId\": 4,\r\n    \"checkInDate\": \"2026-05-01\",\r\n    \"checkOutDate\": \"2026-06-02\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5423/api/bookings",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5423",
+                  "path": [
+                    "api",
+                    "bookings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "http://localhost:5423/api/bookings",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
