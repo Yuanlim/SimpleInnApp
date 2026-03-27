@@ -18,5 +18,25 @@ public class BookingConfiguration : IEntityTypeConfiguration<Booking>
         builder.HasOne(b => b.Room)
                 .WithMany()
                 .HasForeignKey(b => b.RoomId);
+
+        // Initialize some data
+        builder.HasData(
+            new
+            {
+                Id = 1,
+                GuestName = "John Doe",
+                RoomId = 1,
+                CheckInDate = DateTime.Parse("2026-05-01"),
+                CheckOutDate = DateTime.Parse("2026-06-02")
+            },
+            new
+            {
+                Id = 2,
+                GuestName = "Jason",
+                RoomId = 4,
+                CheckInDate = DateTime.Parse("2026-05-01"),
+                CheckOutDate = DateTime.Parse("2026-06-02")
+            }
+        );
     }
 }
