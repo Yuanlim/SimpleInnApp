@@ -59,9 +59,9 @@ Exported file located in Project Root/src/Test/Inn.postman-collection.json
 
 ## Endpoints design
 #### Validation is performed at the beginning of each request to ensure that input data is complete and valid before proceeding with any processing or database queries.
-#### If query was reused, it is wrapped into the relevent etity query folder, for reusability.
+#### If query was reused, it is wrapped into the relevent entity query folder, for reusability.
 #### Eventhough some fields have required contraint, it doesnt prevent them to be empty or logically invalid. To resolve the issues Dependency Injection custom made validation services, to validate incoming body request.
-#### Patch Room / Room available are not a required endpoints. But from a client prespective showing all rooms instead of available once, seems to be more valuable. For patching, specifically when client check out we need to update Room IsAvailable status.
+#### Patch Room / Available Room  are not a required endpoints. But from a client prespective showing all rooms instead of available once, seems to be more valuable. For patching, specifically when client check out we need to update Room IsAvailable status.
 
 
 
